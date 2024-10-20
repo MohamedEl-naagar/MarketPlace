@@ -1,0 +1,19 @@
+.hero {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+}
+
+.feature-icon img {
+  max-width: 100px; 
+  margin-bottom: 15px;
+}
+
+.call-to-action {
+  background-color: #e9ecef;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+.call-to-action h2 {
+  margin-bottom: 20px;
+}

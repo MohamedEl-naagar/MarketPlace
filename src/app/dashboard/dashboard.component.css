@@ -1,0 +1,33 @@
+.container {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

@@ -1,0 +1,52 @@
+<div class="container mt-5">
+
+  <!-- About Us -->
+
+  <h2>About MarketMate Egypt</h2>
+  <p class="lead">
+    Welcome to MarketMate Egypt, the platform that connects distributors with local brands. Our mission is to help businesses
+    thrive by simplifying the process of product distribution and marketing. We believe in empowering local businesses by
+    providing them with the tools to grow and reach more customers.
+  </p>
+  <p>
+    At MarketMate, we are committed to supporting both distributors and companies, ensuring a seamless experience in managing
+    and promoting products. Whether you're a distributor looking for high-quality products to add to your portfolio or a brand
+    aiming to expand your market reach, MarketMate Egypt is your trusted partner.
+  </p>
+  <p>
+    Join us today and be part of the journey to enhance product distribution in Egypt.
+  </p>
+
+  <h3>Our Vision</h3>
+  <p>
+    To become the leading platform for connecting distributors with local brands in Egypt, fostering growth and innovation
+    within the marketplace.
+  </p>
+
+  <h3>Our Mission</h3>
+  <p>
+    We aim to streamline the product distribution process by offering a user-friendly platform that connects businesses
+    efficiently and effectively.
+  </p>
+
+  <!-- Contact Us -->
+  <h2>Contact Us</h2>
+  <p class="lead">We would love to hear from you. Please fill out the form below and we'll get in touch with you as soon as possible.</p>
+
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="contactForm.name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="contactForm.email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea class="form-control" id="message" rows="5" [(ngModel)]="contactForm.message" name="message" placeholder="Enter your message" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>

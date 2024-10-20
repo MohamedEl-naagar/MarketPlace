@@ -1,0 +1,34 @@
+.card {
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cart {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product-card img {
+  height: 150px;
+  object-fit: cover;
+}
+
+.btn-success {
+  margin-top: 10px;
+}

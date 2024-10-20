@@ -1,0 +1,63 @@
+<div class="container">
+  <h2>Manage Products</h2>
+
+  <form (ngSubmit)="addProduct()" class="form-inline mb-3">
+    <div class="form-group mr-2">
+      <label for="productName" class="sr-only">Product Name</label>
+      <input
+        type="text"
+        id="productName"
+        class="form-control"
+        [(ngModel)]="newProduct.name"
+        name="name"
+        placeholder="Product Name"
+        required
+      />
+    </div>
+    <div class="form-group mr-2">
+      <label for="productDescription" class="sr-only">Product Description</label>
+      <input
+        type="text"
+        id="productDescription"
+        class="form-control"
+        [(ngModel)]="newProduct.description"
+        name="description"
+        placeholder="Product Description"
+        required
+      />
+    </div>
+    <div class="form-group mr-2">
+      <label for="productPrice" class="sr-only">Price</label>
+      <input
+        type="number"
+        id="productPrice"
+        class="form-control"
+        [(ngModel)]="newProduct.price"
+        name="price"
+        placeholder="Price"
+        required
+      />
+    </div>
+    <div class="form-group mr-2">
+      <label for="productImage" class="sr-only">Product Image</label>
+      <input
+        type="file"
+        id="productImage"
+        (change)="onFileChange($event)"
+        accept="image/*"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let product of products">
+      <div class="product-info">
+        <img *ngIf="product.image" [src]="product.image" alt="{{ product.name }}" />
+        <span>{{ product.name }} - ${{ product.price }}</span>
+      </div>
+      <button class="btn btn-danger btn-sm float-right" (click)="removeProduct(product)">Remove</button>
+    </li>
+  </ul>
+</div>

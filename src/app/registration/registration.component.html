@@ -1,0 +1,113 @@
+<div class="container mt-5">
+  <h2>Register</h2>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <!-- Role Selection -->
+    <div class="form-group mb-3">
+      <label for="role">Select Role <span class="text-danger">*</span></label>
+      <select class="form-control" id="role" formControlName="role" (change)="onRoleChange($event)">
+        <option value="">Select your role</option>
+        <option value="distributor">Distributor</option>
+        <option value="brand">Brand</option>
+      </select>
+      <div *ngIf="registrationForm.get('role')?.invalid && registrationForm.get('role')?.touched" class="text-danger">
+        Role is required.
+      </div>
+    </div>
+
+    <!-- Full Name Input -->
+    <div class="form-group mb-3">
+      <label for="name">Full Name <span class="text-danger">*</span></label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        placeholder="Enter your full name"
+      />
+      <div *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+
+    <!-- Email Input -->
+    <div class="form-group mb-3">
+      <label for="email">Email Address <span class="text-danger">*</span></label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="text-danger">
+        A valid email is required.
+      </div>
+    </div>
+
+    <!-- Phone Number Input -->
+    <div class="form-group mb-3">
+      <label for="phone">Phone Number <span class="text-danger">*</span></label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        formControlName="phone"
+        placeholder="Enter your phone number"
+      />
+      <div *ngIf="registrationForm.get('phone')?.invalid && registrationForm.get('phone')?.touched" class="text-danger">
+        Phone number is required.
+      </div>
+    </div>
+
+    <!-- Password Input -->
+    <div class="form-group mb-3">
+      <label for="password">Password <span class="text-danger">*</span></label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="text-danger">
+        Password is required.
+      </div>
+    </div>
+
+    <!-- Confirm Password Input -->
+    <div class="form-group mb-3">
+      <label for="confirmPassword">Confirm Password <span class="text-danger">*</span></label>
+      <input
+        type="password"
+        class="form-control"
+        id="confirmPassword"
+        formControlName="confirmPassword"
+        placeholder="Re-enter your password"
+      />
+      <div *ngIf="registrationForm.hasError('passwordMismatch') && registrationForm.get('confirmPassword')?.touched" class="text-danger">
+        Passwords do not match.
+      </div>
+    </div>
+
+    <!-- Official Documents Upload -->
+    <div class="form-group mb-3" *ngIf="isBrand">
+      <label for="upload">Upload Official Documents <span class="text-danger">*</span></label>
+      <input
+        type="file"
+        class="form-control"
+        id="upload"
+        formControlName="officialDocs"
+        accept=".pdf,.jpg,.png"
+      />
+      <div *ngIf="registrationForm.get('officialDocs')?.invalid && registrationForm.get('officialDocs')?.touched" class="text-danger">
+        Official documents are required for brands.
+      </div>
+      <small class="form-text text-muted">Please upload valid documents in PDF, JPG, or PNG format.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">
+      Register
+    </button>
+  </form>
+</div>
